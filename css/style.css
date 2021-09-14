@@ -80,7 +80,6 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-align: center;
           align-items: center;
   background: #fff;
-  max-height: 730px;
   height: 100%;
 }
 
@@ -169,6 +168,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-arrow-two, .bg-arrow {
+  position: relative;
+  overflow: hidden;
+  background-size: 170%;
+  background-position: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -177,9 +180,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   max-height: 350px;
   height: 350px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
 }
 .bg-arrow-two > p, .bg-arrow > p {
   font-size: 72px;
@@ -460,11 +460,11 @@ body {
 }
 
 .bg-arrow__arrow {
-  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   position: absolute;
-  max-width: 1196px;
-  width: 100%;
+  width: 1198px;
   height: 350px;
   background-image: url(../img/arrow1.png);
   background-repeat: no-repeat;
@@ -579,11 +579,11 @@ body {
 }
 
 .bg-arrow__arrow2 {
-  -webkit-transform: translateX(-300%);
-          transform: translateX(-300%);
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
   position: absolute;
-  max-width: 1196px;
-  width: 100%;
+  width: 1198px;
   height: 350px;
   background-image: url(../img/arrow2.png);
   background-repeat: no-repeat;
