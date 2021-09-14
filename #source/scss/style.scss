@@ -13,7 +13,6 @@ $font: 'Russo One', sans-serif;
     position: relative;
     align-items: center;
     background: #fff;
-    max-height: 730px;
     height: 100%;
 }
 %topwhite {
@@ -77,13 +76,15 @@ $font: 'Russo One', sans-serif;
     }
 }
 %bgarrow {
+    position: relative;
+    overflow: hidden;
+    background-size: 170%;
+    background-position: center;
     align-items: center;
     display: flex;
     max-height: 350px;
     height: 350px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center bottom;
+
     &>p {
         font-size: 72px;
         line-height: 100%;
@@ -97,11 +98,17 @@ $font: 'Russo One', sans-serif;
 * {
     scroll-behavior: smooth;
 }
-body {
+html {
+    width: 100%;
 
+}
+body {
+    width: 100%;
+    display: inline-block;
     overflow-x: hidden;
     font-family: $font;
 }
+
 .wrapper {
 
     overflow: hidden;
@@ -310,10 +317,10 @@ body {
     background-image: url(../img/bgp1.jpg);
 }
 .bg-arrow__arrow {
-    transform: translateX(200%);
+    right: 0;
+    transform: translateX(100%);
     position: absolute;
-    max-width: 1196px;
-    width: 100%;
+    width: 1198px;
     height: 350px;
     background-image: url(../img/arrow1.png);
     background-repeat: no-repeat;
@@ -406,10 +413,10 @@ body {
     }
 }
 .bg-arrow__arrow2 {
-    transform: translateX(-300%);
+    left: 0;
+    transform: translateX(-100%);
     position: absolute;
-    max-width: 1196px;
-    width: 100%;
+    width: 1198px;
     height: 350px;
     background-image: url(../img/arrow2.png);
     background-repeat: no-repeat;
