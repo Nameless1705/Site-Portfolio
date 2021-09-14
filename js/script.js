@@ -49,50 +49,52 @@ window.addEventListener('mousemove', function(e) {
 // PARALAX BG 1st ARROW + ARROW
 let bgp = document.getElementById('bgp')
 let arrow1 = document.getElementById('arrowfirst');
-  function onEntry(entry) {
-    entry.forEach(change => {
-      if (change.isIntersecting) {
-        window.addEventListener('scroll', function(){
-        let value = window.scrollY ;
-        bgp.style.backgroundPositionY = -value * 0.2 + 'px';
-        arrow1.style.right = value * 1.7 + 'px'; 
-      })
-    }
-    });
+let about = document.getElementById('about');
+
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      window.addEventListener('scroll', function(){
+      var value = about.getBoundingClientRect().top;
+      bgp.style.backgroundPositionY = value * 0.2 + 'px';
+      arrow1.style.right = -value * 2 + 'px'; 
+    })
   }
-  
-  let options = {
-    threshold: [0] };
-  let observer = new IntersectionObserver(onEntry, options);
-  let elements = document.querySelectorAll('.bg-arrow');
-  
-  for (let elm of elements) {
-    observer.observe(elm);
-  }
+  });
+}
+let options = {
+  threshold: [0] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.bg-arrow');
+
+for (let elm of elements) {
+  observer.observe(elm);
+}
 //---------------------------------------------------//
 // PARALAX BG 2nd ARROW + ARROW
 let bgp2 = document.getElementById('bgp2')
 let arrow2 = document.getElementById('arrowsecond');
-  function onEntry2(entry) {
-    entry.forEach(change => {
-      if (change.isIntersecting) {
-        window.addEventListener('scroll', function(){
-        let value = window.scrollY ;
-        bgp2.style.backgroundPositionY = -value * 0.2 + 'px';
-        arrow2.style.left = value * 1.5 + 'px'; 
-      })
-    }
-    });
+let skills = document.getElementById('skills');
+
+function onEntry2(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      window.addEventListener('scroll', function(){
+      var value = skills.getBoundingClientRect().top;
+      bgp2.style.backgroundPositionY = value * 0.3 + 'px';
+      arrow2.style.left = -value * 2 + 'px'; 
+    })
   }
-  
-  let options2 = {
-    threshold: [0] };
-  let observer2 = new IntersectionObserver(onEntry2, options2);
-  let elements2 = document.querySelectorAll('.bg-arrow-two');
-  
-  for (let elm2 of elements2) {
-    observer2.observe(elm2);
-  }
+  });
+}
+let options2 = {
+  threshold: [0] };
+let observer2 = new IntersectionObserver(onEntry2, options2);
+let elements2 = document.querySelectorAll('.bg-arrow-two');
+
+for (let elm2 of elements2) {
+  observer2.observe(elm2);
+}
 //---------------------------------------------//
 // ANIMATION FOR SKILLS ITEMS
 function onEntry3(entry) {
